@@ -93,4 +93,3 @@ collision_enabled = false
 script = ExtResource("1_c7s6e")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=359050878]
-position = Vector2(2, 2)
