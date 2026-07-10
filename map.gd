@@ -9,7 +9,7 @@ var map_size_pixel: Vector2
 var cam_pos_min: Vector2
 var cam_pos_max: Vector2
 
-var map_scale = 0.5
+var map_scale = 0.5  # equal to value of "Map > Inspector > Node2D > Transform > Scale"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
