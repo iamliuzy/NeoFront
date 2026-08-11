@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cypltrql4i5u8"]
+
+[ext_resource type="Script" uid="uid://cnnbclxvontqk" path="res://tile.gd" id="1_n3f48"]
+
+[node name="Tile" type="Node2D" unique_id=1458407867]
+script = ExtResource("1_n3f48")
+
+[node name="Terrain" type="Polygon2D" parent="." unique_id=918330272]
+color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+polygon = PackedVector2Array(-128, 0, -64, 112, 64, 112, 128, 0, 64, -112, -64, -112)

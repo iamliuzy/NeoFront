@@ -1,5 +1,4 @@
-@tool
-extends TileMapLayer
+extends Node
 
 var screen_size: Vector2
 
@@ -9,12 +8,13 @@ var map_size_pixel: Vector2
 var cam_pos_min: Vector2
 var cam_pos_max: Vector2
 
-var map_scale = 0.5  # equal to value of "Map > Inspector > Node2D > Transform > Scale"
+var map_scale: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	screen_size = get_viewport_rect().size / map_scale
-	var cells = get_used_cells()
+	map_scale = $MapView.scale.abs()
+	screen_size = $MapView.get_viewport_rect().size / map_scale
+	var cells = $MapView.get_used_cells()
 	var map_size_raw: Vector2i
 	for cell in cells:
 		if map_size_raw.x < cell.x:
@@ -43,14 +43,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO
-	if Input.is_action_pressed("ui_down"):
-		velocity.y += 1
-	if Input.is_action_pressed("ui_up"):
-		velocity.y -= 1
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
+	if Input.is_action_pressed("move_left"):
+		velocity.x -= 1
+	if Input.is_action_pressed("move_down"):
+		velocity.y += 1
+	if Input.is_action_pressed("move_up"):
+		velocity.y -= 1
 	if velocity.length() > 0:
 		velocity = velocity.normalized()
 		$Camera2D.position += velocity * 1024 * delta
