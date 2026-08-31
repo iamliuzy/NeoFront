@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dl5e87oncc8im"]
+
+[ext_resource type="Script" uid="uid://b6owpe87briqp" path="res://game/map_view/hud/division_item.gd" id="1_l4d7k"]
+[ext_resource type="Texture2D" uid="uid://n3482su2kagv" path="res://assets/hud.png" id="2_k66eo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tno8b"]
+atlas = ExtResource("2_k66eo")
+region = Rect2(0, 0, 256, 48)
+filter_clip = true
+
+[node name="DivisionItem" type="Control" unique_id=339603907]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l4d7k")
+
+[node name="DivisionItemTexture" type="TextureButton" parent="." unique_id=1526649101]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_tno8b")
+
+[node name="DivisionName" type="Label" parent="." unique_id=1269649595]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

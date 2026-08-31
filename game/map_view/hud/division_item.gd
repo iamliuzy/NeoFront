@@ -1,12 +1,15 @@
-extends Node2D
+extends Control
 
-enum Terrain {
-	
-}
+class_name DivisionItem
+
+var division: Division
+
+func _init(division: Division):
+	self.division = division
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Terrain.color = Color("00B3D6", 100)
+	$DivisionName.text = division.division_name
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
