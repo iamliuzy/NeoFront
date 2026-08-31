@@ -13,10 +13,13 @@ func _process(delta: float) -> void:
 
 func _on_division_selected(division: Division):
 	if division.selected == true:
-		$DivisionList.add_child(DivisionItem.new(division))
+		$DivisionList.add_child(DivisionItem.init(division))
 	else:
-		pass
-		#$DivisionList.find_child()
+		for i in $DivisionList.get_children():
+			if i.division == division:
+				$DivisionList.remove_child(i)
 	
 	if $DivisionList.get_child_count() == 0:
-		pass
+		$DivisionList.visible = false
+	else:
+		$DivisionList.visible = true

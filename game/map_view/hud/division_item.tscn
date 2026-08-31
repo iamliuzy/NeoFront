@@ -8,6 +8,12 @@ atlas = ExtResource("2_k66eo")
 region = Rect2(0, 0, 256, 48)
 filter_clip = true
 
+[sub_resource type="SystemFont" id="SystemFont_dakft"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dxrkv"]
+font = SubResource("SystemFont_dakft")
+font_size = 20
+
 [node name="DivisionItem" type="Control" unique_id=339603907]
 layout_mode = 3
 anchors_preset = 15
@@ -25,5 +31,12 @@ texture_normal = SubResource("AtlasTexture_tno8b")
 
 [node name="DivisionName" type="Label" parent="." unique_id=1269649595]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 244.0
+offset_bottom = 36.0
+label_settings = SubResource("LabelSettings_dxrkv")
+horizontal_alignment = 3
+vertical_alignment = 3
+
+[connection signal="ready" from="DivisionName" to="." method="_on_division_name_ready"]

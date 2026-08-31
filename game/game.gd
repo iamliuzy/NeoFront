@@ -6,7 +6,7 @@ var debug = OS.is_debug_build()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Divisions.add_division(Division.new("aaa",
+	$Divisions.add_division(Division.init("aaa",
 										 Nation.new("a", Color.AQUA),
 										 Division.DivisionType.Tank,
 										 10.0, 10.0, 10.0), self)

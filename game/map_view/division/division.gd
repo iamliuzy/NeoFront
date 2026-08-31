@@ -14,15 +14,17 @@ var speed: float
 
 signal select
 
-func _init(division_name: String, nation: Nation,
+static func init(division_name: String, nation: Nation,
 		   type: DivisionType, attack: float,
-		   defense: float, speed: float) -> void:
-	self.division_name = division_name
-	self.nation = nation
-	self.type = type
-	self.attack = attack
-	self.defense = defense
-	self.speed = speed
+		   defense: float, speed: float):
+	var div = preload("res://game/map_view/division/division.tscn").instantiate()
+	div.division_name = division_name
+	div.nation = nation
+	div.type = type
+	div.attack = attack
+	div.defense = defense
+	div.speed = speed
+	return div
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -118,16 +118,16 @@ script = ExtResource("3_4fuuu")
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1625895640]
 script = ExtResource("6_dakft")
 
-[node name="DivisionList" type="VBoxContainer" parent="HUD" unique_id=53734863]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="ZoomLabel" type="Label" parent="HUD" unique_id=369072740]
 visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 label_settings = SubResource("LabelSettings_vasa2")
+
+[node name="DivisionList" type="VBoxContainer" parent="HUD" unique_id=53734863]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="ready" from="MapView/Camera" to="Divisions" method="_on_camera_ready"]
 [connection signal="ready" from="MapView/Map" to="MapView/Camera" method="parent_loaded"]
